@@ -1,0 +1,17 @@
+{
+
+"frames":{
+"img_build1.png":{"spriteSourceSize":{"x":0,"y":1},"trimmed":true,"rotated":false,"sourceSize":{"w":323,"h":340},"frame":{"h":339,"x":316,"w":323,"y":0}},
+"img_矿石.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":70,"h":80},"frame":{"h":79,"x":818,"w":70,"y":473}},
+"img__instance290.png":{"spriteSourceSize":{"x":0,"y":1},"trimmed":true,"rotated":false,"sourceSize":{"w":38,"h":20},"frame":{"h":19,"x":890,"w":37,"y":489}},
+"img__instance292.png":{"spriteSourceSize":{"x":0,"y":1},"trimmed":true,"rotated":false,"sourceSize":{"w":38,"h":20},"frame":{"h":19,"x":922,"w":36,"y":366}},"s9_bg信息.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":273,"h":25},"frame":{"h":25,"x":0,"w":273,"y":675}},
+"img_build4.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":338,"h":364},"frame":{"h":364,"x":641,"w":338,"y":0}},
+"img_主塔.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":100,"h":188},"frame":{"h":187,"x":818,"w":100,"y":594}},
+"img_地表1.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":500,"h":252},"frame":{"h":251,"x":0,"w":500,"y":341}},
+"img_格子可用.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":102,"h":52},"frame":{"h":52,"x":818,"w":102,"y":366}},
+"img_Btn设置n.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":80,"h":80},"frame":{"h":79,"x":0,"w":78,"y":594}},
+"img_build3.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":315,"h":318},"frame":{"h":317,"x":0,"w":314,"y":0}},
+"img_格子one.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":102,"h":52},"frame":{"h":51,"x":818,"w":101,"y":420}},
+"img_build2.png":{"spriteSourceSize":{"x":0,"y":0},"trimmed":true,"rotated":false,"sourceSize":{"w":315,"h":330},"frame":{"h":329,"x":502,"w":314,"y":366}},
+"img__instance291.png":{"spriteSourceSize":{"x":0,"y":1},"trimmed":true,"rotated":false,"sourceSize":{"w":38,"h":20},"frame":{"h":19,"x":921,"w":37,"y":420}},
+"img__instance282.png":{"spriteSourceSize":{"x":0,"y":2},"trimmed":true,"rotated":false,"sourceSize":{"w":27,"h":17},"frame":{"h":14,"x":890,"w":9,"y":473}}},"meta":{"image":"SWF_Fight.png","scale":1,"size":{"w":1024,"h":1024},"format":"RGBA8888","version":"1.0"}}
