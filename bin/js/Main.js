@@ -7,14 +7,14 @@ var GameMain = /** @class */ (function () {
         Laya.init(com.MyClass.Config.stageW, com.MyClass.Config.stageH, Laya.WebGL);
         com.MyClass.MainManager.getInstence().init(Laya.stage);
         var source = [
-            [Global.SWF_Default, "swf"]
+            [Strings.SWF_Default, "swf"]
         ];
         com.MyClass.MySourceManager.getInstance().addTexture(source, laya.utils.Handler.create(this, this.initF));
     }
     /** 初始化资源加载完成 */
     GameMain.prototype.initF = function () {
         new com.MyClass.MyLoadingView([
-            Global.SWF_Fight + ".swf",
+            Strings.SWF_Fight + ".swf",
             "res/skyBack.jpg"
         ], this.startGame, this);
     };

@@ -24,7 +24,7 @@ export class LoadingView extends Sprite{
 		this.all= _all;
 		var picUrl:string;
 		LayerStarlingManager.getInstence().LayerTop.addChild(this);
-		this.sprBack	=MySourceManager.getInstance().getObjFromSwf(Global.SWF_Default,"spr_Loading");
+		this.sprBack	=MySourceManager.getInstance().getObjFromSwf(Strings.SWF_Default,"spr_Loading");
 		if(this.sprBack!=null){
 			this.addChild(this.sprBack);
 			for(let i:number=0;i<this.sprBack.numChildren;i++){

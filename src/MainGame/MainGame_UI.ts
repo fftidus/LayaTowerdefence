@@ -5,7 +5,7 @@ export class MainGame_UI extends starling.Sprite{
 	private sourceInfo:UI_sourceInfo;
 	constructor(){
 		super();
-		this.sprBack=com.MyClass.MySourceManager.getInstance().getSprFromSwf(Global.SWF_Fight,"spr_View");
+		this.sprBack=com.MyClass.MySourceManager.getInstance().getSprFromSwf(Strings.SWF_Fight,"spr_View");
 		this.addChild(this.sprBack);
 		this.ac=new com.MyClass.MyView.MyViewAllCompsController(this.sprBack);
 		this.sourceInfo=new UI_sourceInfo(this.sprBack.getChildByName("_资源")as starling.Sprite);

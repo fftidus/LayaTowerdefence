@@ -17,7 +17,7 @@ var MainGame;
         __extends(MainGame_UI, _super);
         function MainGame_UI() {
             var _this = _super.call(this) || this;
-            _this.sprBack = com.MyClass.MySourceManager.getInstance().getSprFromSwf(Global.SWF_Fight, "spr_View");
+            _this.sprBack = com.MyClass.MySourceManager.getInstance().getSprFromSwf(Strings.SWF_Fight, "spr_View");
             _this.addChild(_this.sprBack);
             _this.ac = new com.MyClass.MyView.MyViewAllCompsController(_this.sprBack);
             _this.sourceInfo = new UI_sourceInfo(_this.sprBack.getChildByName("_资源"));

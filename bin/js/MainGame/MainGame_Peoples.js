@@ -11,5 +11,14 @@ var MainGame;
         return MainGame_Peoples;
     }());
     MainGame.MainGame_Peoples = MainGame_Peoples;
+    /**
+     * 单个角色
+     */
+    var MainGame_PeopleOne = /** @class */ (function () {
+        function MainGame_PeopleOne() {
+        }
+        return MainGame_PeopleOne;
+    }());
+    MainGame.MainGame_PeopleOne = MainGame_PeopleOne;
 })(MainGame || (MainGame = {}));
 //# sourceMappingURL=MainGame_Peoples.js.map

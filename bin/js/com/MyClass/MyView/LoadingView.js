@@ -31,7 +31,7 @@ var com;
                     _this.all = _all;
                     var picUrl;
                     MyView.LayerStarlingManager.getInstence().LayerTop.addChild(_this);
-                    _this.sprBack = MyClass.MySourceManager.getInstance().getObjFromSwf(Global.SWF_Default, "spr_Loading");
+                    _this.sprBack = MyClass.MySourceManager.getInstance().getObjFromSwf(Strings.SWF_Default, "spr_Loading");
                     if (_this.sprBack != null) {
                         _this.addChild(_this.sprBack);
                         for (var i = 0; i < _this.sprBack.numChildren; i++) {
