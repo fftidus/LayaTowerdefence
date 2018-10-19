@@ -6,8 +6,8 @@ var com;
             function MyTweenerManager() {
                 this.MM = MyClass.MainManager.getInstence();
                 this.DIC_Tween = new Dictionary();
+                this.isListener = false;
                 this.Pause = false;
-                this.countNum = 0;
             }
             MyTweenerManager.prototype.actionF = function () {
                 if (this.Pause)
@@ -22,6 +22,7 @@ var com;
                         this.DIC_Tween.get(id).moveF();
                 }
                 if (this.DIC_Tween.keys.length == 0) {
+                    this.isListener = false;
                     this.MM.removeEnterFrameFun(this.actionF);
                 }
             };
@@ -32,21 +33,20 @@ var com;
                 }
                 if (t == null) {
                     if (this.DIC_Tween.keys.indexOf(mc) != -1) {
-                        this.countNum--;
                         this.DIC_Tween.remove(mc);
                     }
                 }
                 else {
                     this.DIC_Tween.set(mc, t);
-                    this.countNum++;
-                    if (this.countNum == 1) {
+                    if (this.isListener == false) {
+                        this.isListener = true;
                         this.MM.addEnterFrameFun(laya.utils.Handler.create(this, this.actionF, null, false));
                     }
                 }
             };
             MyTweenerManager.prototype.stopAll = function () {
                 this.DIC_Tween.clear();
-                this.countNum = 0;
+                this.isListener = false;
                 this.MM.removeEnterFrameFun(this.actionF);
             };
             return MyTweenerManager;

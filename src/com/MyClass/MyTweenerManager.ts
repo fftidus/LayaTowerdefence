@@ -2,8 +2,8 @@ module com.MyClass{
 export class MyTweenerManager{
 	private MM:MainManager	= MainManager.getInstence();
 	private DIC_Tween:Dictionary = new Dictionary();
+	private isListener:boolean=false;
 	public Pause:boolean=false;
-	private countNum:number=0;
 	public constructor() {
 	}
 
@@ -20,6 +20,7 @@ export class MyTweenerManager{
 				(this.DIC_Tween.get(id) as com.MyClass.Tools.MyTween).moveF();
 		}
 		if(this.DIC_Tween.keys.length==0){
+			this.isListener=false;
 			this.MM.removeEnterFrameFun(this.actionF);
 		}
 	}
@@ -32,13 +33,12 @@ export class MyTweenerManager{
 		}
 		if(t == null){
 			if(this.DIC_Tween.keys.indexOf(mc) != -1) {
-				this.countNum--;
 				this.DIC_Tween.remove(mc);
 			}
 		}else{
 			this.DIC_Tween.set(mc,t);
-			this.countNum++;
-			if(this.countNum==1){
+			if(this.isListener==false){
+				this.isListener=true;
 				this.MM.addEnterFrameFun(laya.utils.Handler.create(this,this.actionF,null,false));
 			}
 		}
@@ -47,7 +47,7 @@ export class MyTweenerManager{
 	public stopAll():void
 	{
 		this.DIC_Tween.clear();
-		this.countNum=0;
+		this.isListener=false;
 		this.MM.removeEnterFrameFun(this.actionF);
 	}
 }

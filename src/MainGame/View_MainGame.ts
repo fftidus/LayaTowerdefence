@@ -10,7 +10,8 @@ export class View_MainGame extends starling.Sprite{
 	private mmeMap:com.MyClass.MyView.MyMouseEventStarling;
 	private gesMapMove:com.MyClass.MyGestures.MyGesture_RightSlide;
 	//关卡控制
-	// private 
+	private source:Object={"能源":0,"木材":0,"矿石":0};
+	private peoples:MainGame_Peoples;
 	
 	constructor(info){
 		super();
@@ -43,7 +44,7 @@ export class View_MainGame extends starling.Sprite{
 	}
 
 	/**
-	 * 初始关卡
+	 * 初始关卡，主塔位置，资源，地形
 	 */
 	private initMission():void{
 

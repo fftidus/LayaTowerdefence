@@ -23,19 +23,17 @@ var GameMain = /** @class */ (function () {
         var data = new Maps.MyTiledMap_Data({
             "size": 100,
             "底": "spr_map1",
-            "url": { "g1": { "url": "spr_Map1", "swf": "SWF_Fight", "size": 20, "can": true },
-                "i1": { "url": "spr_gtype1", "swf": "SWF_Fight", "size": 1, "can": false, "type": "矿石" },
-                "b1": { "url": "spr_build1", "swf": "SWF_Fight", "size": 4, "can": false }
+            "url": { "g1": { "url": "spr_Map1", "swf": "SWF_Fight", "size": 20, "can": true }
             },
             "row": 20,
             "col": 20,
             "地表": {
                 1: { "g1": [1] }
-            },
-            "物体": {
-                1: { "b1": [1] },
-                5: { "i1": [5, 6, 7, 8, 9, 10] }
             }
+            // ,"物体":{
+            //     1:{"b1":[1]}
+            //     ,5:{"i1":[5,6,7,8,9,10]}
+            // }
         });
         com.MyClass.MySceneManager.getInstance().runScene(MainGame.View_MainGame, { "map": data });
     };

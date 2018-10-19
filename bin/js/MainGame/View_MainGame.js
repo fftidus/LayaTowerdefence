@@ -20,6 +20,8 @@ var MainGame;
             var _this = _super.call(this) || this;
             _this.mso = new com.MyClass.MySourceManagerOne();
             _this.mmo = new com.MyClass.MainManagerOne();
+            //关卡控制
+            _this.source = { "能源": 0, "木材": 0, "矿石": 0 };
             com.MyClass.MyView.LayerStarlingManager.getInstence().LayerView.addChild(_this);
             _this.backBg = new Laya.Image("res/skyBack.jpg");
             _this.addChild(_this.backBg);
@@ -29,9 +31,9 @@ var MainGame;
             _this.map.data = info.map;
             _this.addChild(_this.map);
             _this.map.initF();
+            _this.addMapController();
             _this.UI = new MainGame.MainGame_UI();
             _this.addChild(_this.UI);
-            _this.addMapController();
             _this.mmo.addEnterFrameFun(laya.utils.Handler.create(_this, _this.enterF, null, false));
             return _this;
         }
@@ -43,6 +45,11 @@ var MainGame;
             this.mmeMap.setValue("点击", laya.utils.Handler.create(this, this.onClickMapF, null, false));
             this.mmeMap.setValue("滚轮", laya.utils.Handler.create(this, this.onWheelOnMapF, null, false));
             this.gesMapMove = new com.MyClass.MyGestures.MyGesture_RightSlide(Laya.stage, laya.utils.Handler.create(this, this.onRightMouseMoveMap, null, false), null);
+        };
+        /**
+         * 初始关卡，主塔位置，资源，地形
+         */
+        View_MainGame.prototype.initMission = function () {
         };
         /**
          * 点击地图
