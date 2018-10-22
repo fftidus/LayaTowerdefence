@@ -35,7 +35,7 @@ export class MainGame_Peoples{
 	 */
 	public creatRandomPeoples(num:number,	isAverage:boolean,	needChild:boolean=false,needOld:boolean=false,needFamily:number=999):void{
 		if(num<=0 || num ==NaN)return;
-
+		//TODO ...
 	}
 }
 /**

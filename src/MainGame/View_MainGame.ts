@@ -67,6 +67,7 @@ export class View_MainGame extends starling.Sprite{
 		this.map.data.onAddNewLayer4Data(dicSourceData);
 		//人口初始化
 		this.peoples=new MainGame_Peoples();
+		this.peoples.creatRandomPeoples(50,true,false,false,5);
 	}
 
 
