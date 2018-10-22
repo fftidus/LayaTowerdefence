@@ -26,19 +26,22 @@ module Maps{
 		public url:string;
 		/** 占用格子大小 */
 		public sizeNum:number=1;
+		/** 额外属性 */
+		public dicSpe:Object;
 
 		constructor(){
 			super();
 			this.CID =MyTiledMap.countObject++;
 		}
 
-		public initF(data:MyTiledMap_Data_urlOne,	row:number,col:number):void{
+		public initF(data:MyTiledMap_Data_One,	row:number,col:number):void{
 			if(this.Role==null){
 				this.Role=MyTiledMap_ObjView.getOne(data.swf,data.url);
 				this.addChild(this.Role);
 			}
 			this.sizeNum=data.size;
 			this.url =data.url;
+			this.dicSpe =data.dicSpe;
 			this.row=row;
 			this.col=col;
 		}
@@ -66,6 +69,7 @@ module Maps{
 				this.Role.removeF();
 				this.Role=null;
 			}
+			this.dicSpe=null;
 			this.map=null;
 			if(MyTiledMap.pool)MyTiledMap.pool.returnToPool(MyTiledMap_Object.PoolName_Ground,this);
 		}

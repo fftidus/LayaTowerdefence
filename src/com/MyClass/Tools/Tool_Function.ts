@@ -34,42 +34,6 @@ export class Tool_Function{
 	public static onTouchable(tar:any,needParent:boolean=true,needChild:boolean=true):void{
 		if(tar==null)return;
 		tar.touchable=true;
-		return;
-		if(needParent==true){
-			var tarP:any;
-			try{
-				tarP=tar["parent"];
-				if(tarP!=null && tarP.touchable==true){
-					tarP=null;
-				}
-			}catch(e){
-			}
-			if(tarP!=null){
-				Tool_Function.onTouchable(tarP,true,false);
-			}
-		}
-		if(tar instanceof starling.TextField){	return;	}
-		if(needChild==false)return;
-		var num:number=0;
-		if(tar instanceof com.MyClass.MySwf.SwfMovieClip){
-			var _displayObjects:Object = tar._displayObjects;
-			var arr:Array<any>;
-			var l:number;
-			for(let class0 in _displayObjects){
-				arr=_displayObjects[class0];
-				if(arr==null)continue;
-				l = arr.length;
-				for (var i:number = 0; i < l; i++) {
-					Tool_Function.onTouchable(arr[i],false);
-				}
-			}
-		}else if(tar instanceof starling.Sprite){
-			num=tar.numChildren;
-			for(i=0;i<num;i++){
-				var child:any =tar.getChildAt(i);
-				Tool_Function.onTouchable(child,false);
-			}
-		}
 	}
 
 	public static getLastClassName(tar:any):string{
@@ -80,6 +44,7 @@ export class Tool_Function{
         }
 		return className;
 	}
+
 	public static isTypeOf(obj:any,	type:any):boolean
 	{
 		if(obj == null)	return false;

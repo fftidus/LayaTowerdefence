@@ -74,6 +74,11 @@ var com;
                         }
                     }
                 };
+                /** 从数组中取一个随机值 */
+                Tool_ArrayUtils.getRadomOneFromArray = function (arr) {
+                    var i = Tools.Tool_Function.onForceConvertType(Math.random() * arr.length);
+                    return arr[i];
+                };
                 return Tool_ArrayUtils;
             }());
             Tools.Tool_ArrayUtils = Tool_ArrayUtils;

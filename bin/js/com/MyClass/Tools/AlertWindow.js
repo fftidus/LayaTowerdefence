@@ -106,10 +106,10 @@ var com;
                         var sx = MyClass.Config.deviceWidth / MyClass.Config.stageW;
                         var sy = MyClass.Config.deviceHeight / MyClass.Config.stageH;
                         if (sx < sy) { //pad2类似方形屏幕
-                            this.Layer2.scaleX = MyClass.Config.stageScaleInfo.屏幕w / MyClass.Config.stageW;
+                            this.Layer2.scaleX = MyClass.Config.stageScaleInfo["屏幕w"] / MyClass.Config.stageW;
                         }
                         else if (sx > sy) { //宽屏
-                            this.Layer2.scaleY = MyClass.Config.stageScaleInfo.屏幕h / MyClass.Config.stageH;
+                            this.Layer2.scaleY = MyClass.Config.stageScaleInfo["屏幕h"] / MyClass.Config.stageH;
                         }
                     }
                     this.Layer2.addChild(this.Spr);

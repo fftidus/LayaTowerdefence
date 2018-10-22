@@ -111,9 +111,9 @@ export class AlertWindow{
 			var sx:Number=Config.deviceWidth/Config.stageW;
 			var sy:Number=Config.deviceHeight/Config.stageH;
 			if(sx < sy){//pad2类似方形屏幕
-				this.Layer2.scaleX =Config.stageScaleInfo.屏幕w / Config.stageW;
+				this.Layer2.scaleX =Config.stageScaleInfo["屏幕w"] / Config.stageW;
 			}else if(sx > sy){//宽屏
-				this.Layer2.scaleY =Config.stageScaleInfo.屏幕h / Config.stageH;
+				this.Layer2.scaleY =Config.stageScaleInfo["屏幕h"] / Config.stageH;
 			}
 		}
 		this.Layer2.addChild(this.Spr);

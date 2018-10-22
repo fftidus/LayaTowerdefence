@@ -29,6 +29,7 @@ var MainGame;
             _this.backBg.y = (com.MyClass.Config.stageScaleInfo["屏幕h"] - _this.backBg.height) / 2;
             _this.map = new Maps.MyTiledMap();
             _this.map.data = info.map;
+            _this.initMission();
             _this.addChild(_this.map);
             _this.map.initF();
             _this.addMapController();
@@ -50,6 +51,20 @@ var MainGame;
          * 初始关卡，主塔位置，资源，地形
          */
         View_MainGame.prototype.initMission = function () {
+            //资源属性
+            var dicUrlSource = {
+                "s1": { "url": "spr_gtype1", "swf": "SWF_Fight", "size": 1, "属性": { "type": "矿石", "num": 500 } },
+                "b0": { "url": "spr_build0", "swf": "SWF_Fight", "size": 1, "属性": { "type": "建筑", "class": "" } }
+            };
+            this.map.data.addNewUrlSource(dicUrlSource);
+            //矿位置
+            var dicSourceData = {
+                10: { "s1": [3, 4, 5, 6, 7] },
+                11: { "s1": [3, 4, 5, 6, 7] }
+            };
+            this.map.data.onAddSourceData(dicSourceData);
+            //建筑位置
+            console.log(Laya.ClassUtils.getRegClass("MainGame.MainGame_Peoples"));
         };
         /**
          * 点击地图

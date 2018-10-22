@@ -52,48 +52,6 @@ var com;
                     if (tar == null)
                         return;
                     tar.touchable = true;
-                    return;
-                    if (needParent == true) {
-                        var tarP;
-                        try {
-                            tarP = tar["parent"];
-                            if (tarP != null && tarP.touchable == true) {
-                                tarP = null;
-                            }
-                        }
-                        catch (e) {
-                        }
-                        if (tarP != null) {
-                            Tool_Function.onTouchable(tarP, true, false);
-                        }
-                    }
-                    if (tar instanceof starling.TextField) {
-                        return;
-                    }
-                    if (needChild == false)
-                        return;
-                    var num = 0;
-                    if (tar instanceof com.MyClass.MySwf.SwfMovieClip) {
-                        var _displayObjects = tar._displayObjects;
-                        var arr;
-                        var l;
-                        for (var class0 in _displayObjects) {
-                            arr = _displayObjects[class0];
-                            if (arr == null)
-                                continue;
-                            l = arr.length;
-                            for (var i = 0; i < l; i++) {
-                                Tool_Function.onTouchable(arr[i], false);
-                            }
-                        }
-                    }
-                    else if (tar instanceof starling.Sprite) {
-                        num = tar.numChildren;
-                        for (i = 0; i < num; i++) {
-                            var child = tar.getChildAt(i);
-                            Tool_Function.onTouchable(child, false);
-                        }
-                    }
                 };
                 Tool_Function.getLastClassName = function (tar) {
                     var className = tar.constructor.toString();
@@ -102,6 +60,9 @@ var com;
                         className = className.substr(className.indexOf(" ") + 1);
                     }
                     return className;
+                };
+                Tool_Function.getDefinationByName = function (name) {
+                    return Laya.ClassUtils.getClass(name);
                 };
                 Tool_Function.isTypeOf = function (obj, type) {
                     if (obj == null)

@@ -10,7 +10,7 @@ export class View_MainGame extends starling.Sprite{
 	private mmeMap:com.MyClass.MyView.MyMouseEventStarling;
 	private gesMapMove:com.MyClass.MyGestures.MyGesture_RightSlide;
 	//关卡控制
-	private source:Object={"能源":0,"木材":0,"矿石":0};
+	private source:Object={"能源":100,"木材":100,"矿石":100};
 	private peoples:MainGame_Peoples;
 	
 	constructor(info){
@@ -24,6 +24,7 @@ export class View_MainGame extends starling.Sprite{
 
 		this.map =new Maps.MyTiledMap();
         this.map.data =info.map;
+		this.initMission();
         this.addChild(this.map);
         this.map.initF();
 		this.addMapController();
@@ -47,7 +48,25 @@ export class View_MainGame extends starling.Sprite{
 	 * 初始关卡，主塔位置，资源，地形
 	 */
 	private initMission():void{
-
+		//资源属性
+		let dicUrlSource:Object={
+			"s1":{"url":"spr_gtype1","swf":"SWF_Fight","size":1,	"属性":{"type":"矿石","num":500}}
+			,"b0":{"url":"spr_build0","swf":"SWF_Fight","size":1,	"属性":{"type":"基地"}}
+		};
+		this.map.data.addNewUrlSource(dicUrlSource);
+		//矿位置
+		let dicSourceData:Object={
+			10:{"s1":[3,4,5,6,7]}
+			,11:{"s1":[3,4,5,6,7]}
+		};
+		this.map.data.onAddNewLayer4Data(dicSourceData);
+		//建筑位置
+		let dicBuildData:Object={
+			10:{"b0":[10]}
+		};
+		this.map.data.onAddNewLayer4Data(dicSourceData);
+		//人口初始化
+		this.peoples=new MainGame_Peoples();
 	}
 
 
@@ -56,7 +75,9 @@ export class View_MainGame extends starling.Sprite{
 	 * 点击地图
 	 */
 	private onClickMapF(p:any):void{
-		this.map.onClickMapF(p);
+		let obj:Maps.MyTiledMap_Object =this.map.onClickMapF(p);
+		if(obj==null)return;
+		
 	}
 	/**
 	 * 滚轮缩放地图

@@ -132,7 +132,7 @@ export class MyTiledMap extends starling.Sprite{
 	/**
 	 * 点击地图
 	 */
-	public onClickMapF(p:any):void{
+	public onClickMapF(p:any):MyTiledMap_Object{
 		let _x:number =p.x;
 		let _y:number =p.y;
 		_x =(_x -this.x) / this.scaleX;
@@ -160,11 +160,11 @@ export class MyTiledMap extends starling.Sprite{
 				this.p4.y=this.p2.y;
 				if(com.MyClass.Tools.Tool_HitTest.onPoint_IN_Eclipse([this.p1,this.p2,this.p3,this.p4],null,_x,_y) == true){
 					console.log("点击"+row+":"+col);
-					console.log("选中物体："+this.getObjectByRC(row,col));
-					break;
+					return this.getObjectByRC(row,col);
 				}
 			}
 		}
+		return null;
 	}
 	private p1 ={"x":0,"y":0};
 	private p2 ={"x":0,"y":0};

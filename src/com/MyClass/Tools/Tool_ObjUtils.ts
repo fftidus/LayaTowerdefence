@@ -154,8 +154,22 @@ export class Tool_ObjUtils{
 		return obj;
 	}
 
-
-
+	/** 合并
+	 * @param obj 目标object
+	 * @param tar 要被复制的tar
+	 */
+	public static  onComboObject(obj:Object,		tar:Object,		copy:boolean):void{
+		if(obj==null || tar==null)	return;
+		for(let key in tar){
+			if(tar[key]==null){continue;}
+			if(obj[key]==null || Tool_Function.isTypeOf(obj[key],Number) == false || Tool_Function.isTypeOf(tar[key],Number)==false) {
+				if (copy == false)    obj[key] = tar[key];
+				else                   obj[key] = this.CopyF(tar[key]);
+			}else{
+				obj[key] += tar[key];
+			}
+		}
+	}
 
 	public static onClearObj(obj:Object):void{
 		if(obj==null)return;

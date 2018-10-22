@@ -143,6 +143,28 @@ var com;
                     }
                     return obj;
                 };
+                /** 合并
+                 * @param obj 目标object
+                 * @param tar 要被复制的tar
+                 */
+                Tool_ObjUtils.onComboObject = function (obj, tar, copy) {
+                    if (obj == null || tar == null)
+                        return;
+                    for (var key in tar) {
+                        if (tar[key] == null) {
+                            continue;
+                        }
+                        if (obj[key] == null || Tools.Tool_Function.isTypeOf(obj[key], Number) == false || Tools.Tool_Function.isTypeOf(tar[key], Number) == false) {
+                            if (copy == false)
+                                obj[key] = tar[key];
+                            else
+                                obj[key] = this.CopyF(tar[key]);
+                        }
+                        else {
+                            obj[key] += tar[key];
+                        }
+                    }
+                };
                 Tool_ObjUtils.onClearObj = function (obj) {
                     if (obj == null)
                         return;

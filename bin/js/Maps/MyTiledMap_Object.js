@@ -44,6 +44,7 @@ var Maps;
             }
             this.sizeNum = data.size;
             this.url = data.url;
+            this.dicSpe = data.dicSpe;
             this.row = row;
             this.col = col;
         };
@@ -69,6 +70,7 @@ var Maps;
                 this.Role.removeF();
                 this.Role = null;
             }
+            this.dicSpe = null;
             this.map = null;
             if (Maps.MyTiledMap.pool)
                 Maps.MyTiledMap.pool.returnToPool(MyTiledMap_Object.PoolName_Ground, this);

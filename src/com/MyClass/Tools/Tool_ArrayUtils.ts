@@ -64,5 +64,10 @@ export class Tool_ArrayUtils{
 			}
 		}
 	}
+	/** 从数组中取一个随机值 */
+	public static getRadomOneFromArray(arr:Array<any>):any{
+		let i:number =Tool_Function.onForceConvertType(Math.random() * arr.length);
+		return arr[i];
+	}
 }
 }
